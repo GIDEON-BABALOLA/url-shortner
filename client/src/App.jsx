@@ -13,8 +13,9 @@ const response = await api.post("/api/url/shorten", {
   longUrl : url
 })
 if(response && response.data){
+  console.log(response.data.shortUrl)
   setIsLoading(false)
-setShortUrl(response.data.shorturl)
+setShortUrl(response.data.shortUrl)
 }
   }catch(err){
     setError(true)
