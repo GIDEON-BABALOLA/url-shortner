@@ -87,7 +87,7 @@ shortenUrl()
                     </div>
                     <div className="field padding-bottom--24">
                     
-                      <input type="submit" name="submit" value="Shorten" disabled={isLoading}/>
+                      <input type="submit" name="submit" value="Shorten"/>
                     </div>
                     <div className="field">
                       <a className="ssolink" href="#">YouShorten always got you</a>
