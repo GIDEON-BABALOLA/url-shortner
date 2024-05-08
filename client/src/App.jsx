@@ -65,7 +65,7 @@ shortenUrl()
           </div>
           <div className="box-root padding-top--24 flex-flex flex-direction--column" style={{ flexGrow: 1, zIndex: 9 }}>
             <div className="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-              <h1>youShorten</h1>
+              <h1>YouShorten</h1>
             </div>
             <div className="formbg-outer">
               <div className="formbg">
@@ -90,7 +90,7 @@ shortenUrl()
                       <input type="submit" name="submit" value="Shorten" disabled={isLoading}/>
                     </div>
                     <div className="field">
-                      <a className="ssolink" href="#">youShorten always got you</a>
+                      <a className="ssolink" href="#">YouShorten always got you</a>
                     </div>
                   </form>
                 </div>
