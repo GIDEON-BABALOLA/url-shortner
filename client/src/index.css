@@ -247,7 +247,9 @@ a.ssolink {
   box-sizing: border-box;
   animation: flipX 1s linear infinite;
 }
-
+.colored{
+  color: red;
+}
 @keyframes flipX {
   0% {
     transform: perspective(200px) rotateX(0deg) rotateY(0deg);

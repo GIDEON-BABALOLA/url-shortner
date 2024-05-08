@@ -1,20 +1,23 @@
 import { useState } from 'react';
 import { url as api } from "./api/fetchUrl"
 import './App.css';
-
 function App() {
   const [url, setUrl] = useState("")
   const [shorturl, setShortUrl] = useState("")
   const [isLoading, setIsLoading] = useState(null)
+  const [error, setError] = useState(null)
 const shortenUrl = async () => {
   setIsLoading(true)
   try{
-const response = await api.post("/api/url/shorten")
+const response = await api.post("/api/url/shorten", {
+  longUrl : url
+})
 if(response && response.data){
   setIsLoading(false)
 setShortUrl(response.data.shorturl)
 }
   }catch(err){
+    setError(true)
     setIsLoading(false)
     console.log(err.name)
     setShortUrl("Unable To Shorten Url")
@@ -62,7 +65,7 @@ shortenUrl()
           </div>
           <div className="box-root padding-top--24 flex-flex flex-direction--column" style={{ flexGrow: 1, zIndex: 9 }}>
             <div className="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-              <h1>urlShortner</h1>
+              <h1>youShorten</h1>
             </div>
             <div className="formbg-outer">
               <div className="formbg">
@@ -80,14 +83,14 @@ shortenUrl()
                        
                         </div>
                       </div>
-                      <input type="text" name="password" value={shorturl} readOnly/>
+                      <input type="text" name="password" value={shorturl} readOnly  className={ error && "colored"}/>
                     </div>
                     <div className="field padding-bottom--24">
                     
                       <input type="submit" name="submit" value="Shorten" disabled={isLoading}/>
                     </div>
                     <div className="field">
-                      <a className="ssolink" href="#">urlShortner always got you</a>
+                      <a className="ssolink" href="#">youShorten always got you</a>
                     </div>
                   </form>
                 </div>
