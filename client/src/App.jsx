@@ -74,7 +74,9 @@ shortenUrl()
                   <form id="stripe-login" onSubmit={submitForm}>
                     <div className="field padding-bottom--24">
                   
-                      <input type="text" name="text" value={url} onChange={(e) => setUrl(e.target.value)}/>
+                      <input type="text" name="text" value={url} onChange={(e) => setUrl(e.target.value)}
+                        
+                      />
                     </div>
                     <div className="field padding-bottom--24">
                       <div className="">
@@ -83,11 +85,16 @@ shortenUrl()
                        
                         </div>
                       </div>
-                      <input type="text" name="password" value={shorturl} readOnly  className={ error && "colored"}/>
+                      <input type="text" name="password" value={shorturl} readOnly  className={ error && "colored"}
+                         style={{backgroundColor : "1aac83"}}
+                      />
                     </div>
                     <div className="field padding-bottom--24">
                     
-                      <input type="submit" name="submit" value="Shorten"/>
+                     { isLoading ? <>  <span className='loader'></span>
+                     <h6 className='loading'>Loading</h6> </>
+                     : <input type="submit" name="submit" value="Shorten" className='submat'
+                     /> }
                     </div>
                     <div className="field">
                       <a className="ssolink" href="#">YouShorten always got you</a>

@@ -243,12 +243,18 @@ a.ssolink {
   height: 48px;
   display: inline-block;
   position: relative;
-  background: #FFF;
+  background: #5469d4;
   box-sizing: border-box;
   animation: flipX 1s linear infinite;
 }
 .colored{
   color: red;
+}
+.loading{
+  color: black;
+}
+.submat{
+  background-color: green;
 }
 @keyframes flipX {
   0% {
